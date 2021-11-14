@@ -72,7 +72,18 @@ import java.lang.Math;
     public complexe conjuger(){
         return new complexe(re, -im);
     }
-
+    public complexe cosinus(){
+        return new complexe(Math.cos(re)*Math.cosh(im),-Math.sin(re)*Math.sinh(im));
+    }
+    public complexe sinus(){
+        return new complexe(Math.sin(re)*Math.cosh(im),Math.cos(re)*Math.sinh(im));
+    }
+    public complexe cosinusH(){
+        return new complexe(Math.cosh(re)*Math.cos(im),Math.sinh(re)*Math.sin(im));
+    }
+    public complexe sinusH(){
+        return new complexe(Math.sinh(re)*Math.cos(im),Math.cosh(re)*Math.sin(im));
+    }
 }
 class testcomplexe{
     public static void main(String[] args) {
@@ -83,6 +94,9 @@ class testcomplexe{
         System.out.println(b);
         c=a.mult(b);
         System.out.println(c);
-        System.out.println(a.RacineCarré());
+        System.out.println(a.cosinus());
+        System.out.println(a.sinus());
+        System.out.println(a.cosinusH());
+        System.out.println(a.sinusH());
     }
 }
